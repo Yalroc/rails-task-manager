@@ -1,0 +1,17 @@
+<h1>My Tasks</h1>
+<p><%= link_to "New", new_task_path %></p>
+
+<p>*********************</p>
+<% @tasks.each do |task| %>
+  <p><%= "Name: #{task.name}" %></p>
+  <p><%= "Description: #{task.description}" %></p>
+  <p><%= "Created on: #{task.created_at}" %></p>
+  <% if task.updated_at != task.created_at %>
+    <p><%= "Last updated on: #{task.updated_at}" %></p>
+  <% end %>
+  <%= link_to "View individually", task_path(task) %>
+  <%= link_to "Edit", edit_task_path(task) %>
+  <%= link_to "Delete", task_path(task), method: :delete %>
+  <p>*********************</p>
+<% end %>
+

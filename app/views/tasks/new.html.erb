@@ -1,0 +1,18 @@
+<%= form_for @task do |form| %>
+  <%= form.label :name, "Task Name" %>
+  <%= form.text_field :name %>
+
+  <%= form.label :description, "Task Description" %>
+  <%= form.text_field :description %>
+
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "Back to all tasks", tasks_path %>
+
+<!--
+<form action="/tasks" method="post">
+  <input type="text" name="task[name]">
+  <input type="text" name="task[description]">
+  <input type="submit" >
+</form> -->

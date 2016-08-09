@@ -1,0 +1,10 @@
+<h1>My Task</h1>
+<p>*********************</p>
+  <p><%= "Name: #{@task.name}" %></p>
+  <p><%= "Description: #{@task.description}" %></p>
+  <p><%= "Created on: #{@task.created_at}" %></p>
+  <% if @task.updated_at != @task.created_at %>
+    <p><%= "Last updated on: #{@task.updated_at}" %></p>
+  <% end %>
+  <p>*********************</p>
+  <%= link_to "Back to all tasks", tasks_path %>
